@@ -38,6 +38,9 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private final Set<Role> roles = new HashSet<>();
 
+    @OneToMany()
+    private Set<Trip> trips = new HashSet<>();
+
     @PrePersist
     private void init() {
         this.dateOfCreated = LocalDateTime.now();
