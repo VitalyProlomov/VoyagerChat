@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/chat-style.css}">
+<div th:fragment="chat-fragment">
+    <div class="chat-view" id="chatView">
+        <div class="chat-container">
+            <div class="chat-header">Travel Assistant</div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    Hello! I'm your VoyagerChat assistant. Where would you like to go today?
+                </div>
+            </div>
+
+            <div class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your travel question...">
+                <button id="sendButton">Send</button>
+            </div>
+        </div>
+    </div>
+</div>

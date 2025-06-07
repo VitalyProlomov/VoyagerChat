@@ -1,0 +1,157 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<link rel="stylesheet" th:href="@{/css/selector-style.css}">
+<div th:fragment="selector-fragment">
+        <div class="container">
+            <section class="preference-form">
+                <h2 class="form-title">Tell us about your dream trip</h2>
+                <form id="tripForm">
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="destination">Destination</label>
+                                <input type="text" id="destination" placeholder="Where do you want to go?" required>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="trip-dates">Trip Dates</label>
+                                <input type="text" id="trip-dates" placeholder="Select your travel dates"
+                                       onfocus="(this.type='date')" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="trip-type">Trip Type</label>
+                                <select id="trip-type" required>
+                                    <option value="">Select trip type</option>
+                                    <option value="sightseeing">Sightseeing</option>
+                                    <option value="adventure">Adventure</option>
+                                    <option value="relaxation">Relaxation</option>
+                                    <option value="cultural">Cultural</option>
+                                    <option value="food">Food & Culinary</option>
+                                    <option value="shopping">Shopping</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-col">
+                            <div class="form-group">
+                                <label for="travelers">Number of Travelers</label>
+                                <input type="number" id="travelers" min="1" max="20" value="1" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Interests (Select all that apply)</label>
+                        <div class="checkbox-group">
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="history"> History
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="art"> Art
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="nature"> Nature
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="architecture"> Architecture
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="shopping"> Shopping
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="nightlife"> Nightlife
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="food"> Local Cuisine
+                            </label>
+                            <label class="checkbox-item">
+                                <input type="checkbox" name="interests" value="photography"> Photography
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="budget">Budget Level</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="5" value="3" class="slider" id="budget">
+                            <div class="slider-value" id="budget-value">Medium</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pace">Pace of Travel</label>
+                        <div class="slider-container">
+                            <input type="range" min="1" max="5" value="3" class="slider" id="pace">
+                            <div class="slider-value" id="pace-value">Moderate</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="special-requests">Special Requests</label>
+                        <textarea id="special-requests" rows="3"
+                                  placeholder="Any dietary restrictions, accessibility needs, or other special requests"></textarea>
+                    </div>
+
+                    <button type="submit" id="selectorGenerateBtn">Generate My Perfect Trip</button>
+                </form>
+            </section>
+
+            <section class="results" id="resultsSection">
+                <h2 class="results-title">Your Personalized Trip Itinerary</h2>
+                <div class="route-map" id="routeMap">
+                    [Interactive map would display here with the generated route]
+                </div>
+                <div class="itinerary">
+                    <h3>Daily Itinerary</h3>
+                    <div class="itinerary-day">
+                        <h4 class="day-title">Day 1: Arrival & City Exploration</h4>
+                        <div class="activity">
+                            <div class="activity-time">9:00 AM</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Arrival at Airport</div>
+                                <div class="activity-desc">Transfer to your hotel and check-in</div>
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <div class="activity-time">12:00 PM</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Lunch at Local Restaurant</div>
+                                <div class="activity-desc">Try authentic local cuisine at a highly-rated spot</div>
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <div class="activity-time">2:00 PM</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Historic City Center Tour</div>
+                                <div class="activity-desc">Guided walking tour of the main landmarks</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="itinerary-day">
+                        <h4 class="day-title">Day 2: Nature & Adventure</h4>
+                        <div class="activity">
+                            <div class="activity-time">8:00 AM</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Mountain Hike</div>
+                                <div class="activity-desc">Scenic trail with breathtaking views</div>
+                            </div>
+                        </div>
+                        <div class="activity">
+                            <div class="activity-time">1:00 PM</div>
+                            <div class="activity-details">
+                                <div class="activity-title">Picnic Lunch</div>
+                                <div class="activity-desc">Enjoy local specialties in nature</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="download-btn">Download Full Itinerary</button>
+            </section>
+        </div>
+
+</div>

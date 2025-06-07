@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered travel planning assistant that creates personalized itineraries based on your preferences">
+    <link rel="stylesheet" th:href="@{/css/selector-style.css}">
+    <link rel="stylesheet" th:href="@{/css/chat-style.css}">
+    <link rel="stylesheet" th:href="@{/css/colors.css}">
+    <link rel="stylesheet" th:href="@{/css/index-style.css}">
+    <title>VoyagerChat - AI Travel Planner</title>
+</head>
+<body>
+<header>
+    <div class="logo">VoyagerChat</div>
+    <div class="tagline">Your AI-powered travel planning assistant</div>
+</header>
+
+<main class="container">
+    <section class="hero">
+        <h1>Plan Your Perfect Trip with AI</h1>
+        <p class="hero-description">Get personalized travel recommendations and complete itineraries tailored to your interests, budget, and travel style.</p>
+        <a th:href="@{/main-page}" class="cta-button">Start Planning Now</a>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">✈️</div>
+            <h3>Smart Itineraries</h3>
+            <p>AI-generated daily plans optimized for your preferences and travel constraints.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🏨</div>
+            <h3>Personalized Recommendations</h3>
+            <p>Hotels, restaurants and activities matched to your unique tastes.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Time Optimization</h3>
+            <p>Smart scheduling that maximizes your time at each destination.</p>
+        </div>
+    </section>
+
+    <section class="how-it-works">
+        <h2>How VoyagerChat Works</h2>
+        <ol class="steps">
+            <li>Tell us about your trip preferences and constraints</li>
+            <li>Our AI analyzes thousands of options</li>
+            <li>Receive a customized travel plan</li>
+            <li>Refine and perfect your itinerary</li>
+        </ol>
+    </section>
+</main>
+
+<footer>
+    <p>© 2023 VoyagerChat. All rights reserved.</p>
+    <nav class="footer-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a th:href="@{/contact}">Contact Us</a>
+    </nav>
+</footer>
+</body>
+</html>

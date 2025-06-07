@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TravelGenie - Personalized Trip Planner</title>
+    <style>
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">TravelGenie</div>
+    <div class="tagline">Your personalized trip planning assistant</div>
+</header>
+
+
+<script>
+    // Simple script to handle form submission and display results
+    document.getElementById('tripForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('resultsSection').style.display = 'block';
+        window.scrollTo({
+            top: document.getElementById('resultsSection').offsetTop - 20,
+            behavior: 'smooth'
+        });
+    });
+
+    // Update budget value display
+    const budgetSlider = document.getElementById('budget');
+    const budgetValue = document.getElementById('budget-value');
+    const budgetLabels = ['Very Low', 'Low', 'Medium', 'High', 'Very High'];
+
+    budgetSlider.addEventListener('input', function() {
+        budgetValue.textContent = budgetLabels[this.value - 1];
+    });
+
+    // Update pace value display
+    const paceSlider = document.getElementById('pace');
+    const paceValue = document.getElementById('pace-value');
+    const paceLabels = ['Very Slow', 'Slow', 'Moderate', 'Fast', 'Very Fast'];
+
+    paceSlider.addEventListener('input', function() {
+        paceValue.textContent = paceLabels[this.value - 1];
+    });
+</script>
+</body>
+</html>
